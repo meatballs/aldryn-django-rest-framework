@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from functools import partial
 from aldryn_client import forms
 
 
@@ -11,6 +12,9 @@ class Form(forms.BaseForm):
 
     def to_settings(self, data, settings):
         enable_rest_framework = data['enable_rest_framework']
+
+        from aldryn_addons.utils import djsenv
+        env = partial(djsenv, settings=settings)
 
         if enable_rest_framework:
             settings['INSTALLED_APPS'].extend([

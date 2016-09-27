@@ -1,0 +1,15 @@
+Metadata-Version: 1.0
+Name: aldryn-django-rest-framework
+Version: 0.0.3
+Summary: Aldryn Django REST Framework
+============================
+
+This package is a wrapper around the Django REST Framework to allow installation
+as an Aldryn add-on.
+
+Home-page: UNKNOWN
+Author: Owen Campbell
+Author-email: owen.campbell@tanti.org.uk
+License: MIT
+Description: UNKNOWN
+Platform: OS Independent

@@ -25,7 +25,8 @@ class Form(forms.BaseForm):
         enable_rest_framework = data['enable_rest_framework']
         permissions_policy = (
             'rest_framework.permissions.{}'.format(
-            data['permissions_policy'])
+                data['permissions_policy']
+            )
         )
 
         if enable_rest_framework:

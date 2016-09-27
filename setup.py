@@ -12,7 +12,7 @@ setup(
     platforms=['OS Independent'],
     install_requires=[
         'Django>=1.7',
-        'django-rest-framework>=3.4',
+        'djangorestframework>=3.4',
         'aldryn-addons',
     ],
     include_package_data=True,

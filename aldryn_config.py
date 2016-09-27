@@ -11,8 +11,8 @@ class Form(forms.BaseForm):
 
     permissions_policy = forms.SelectField(
         'Django REST Framework Permissions Policy',
+        choices=['AllowAny', 'IsAuthenticated'],
         required=False,
-        choices=('AllowAny', 'IsAuthenticated',),
         initial='AllowAny',
         help_text=(
             'REST Framework Permissions Policies are described at '

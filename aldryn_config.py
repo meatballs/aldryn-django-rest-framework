@@ -10,21 +10,23 @@ class Form(forms.BaseForm):
         initial=True,
     )
 
-    permissions_policy = forms.CharField(
+    permissions_policy = forms.SelectField(
       'Django REST Framework Permissions Policy',
       required=False,
       initial='AllowAny',
+      choices=('AllowAny', 'IsAuthenticated')
       help_text=(
-        'Enter one of the permissions policies described at '
+        'REST Framework Permissions Policies are described at '
         'http://www.django-rest-framework.org/api-guide/permissions/ '
         )
-      )
+    )
 
     def to_settings(self, data, settings):
         enable_rest_framework = data['enable_rest_framework']
         permissions_policy = (
-          'rest_framework.permissions.{}'.format(
-          data['permissions_policy']))
+            'rest_framework.permissions.{}'.format(
+            data['permissions_policy'])
+        )
 
         if enable_rest_framework:
             settings['INSTALLED_APPS'].extend([

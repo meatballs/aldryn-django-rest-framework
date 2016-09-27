@@ -32,6 +32,6 @@ class Form(forms.BaseForm):
             ])
             settings['ADDON_URLS'].append('aldryn_django_rest_framework.urls')
             settings['REST_FRAMEWORK'] = {
-                'DEFAULT_PERMISSION_CLASSES': (permissions_policy)
+                'DEFAULT_PERMISSION_CLASSES': (permissions_policy,)
             }
         return settings

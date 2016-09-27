@@ -16,8 +16,8 @@ class Form(forms.BaseForm):
         choices=('AllowAny', 'IsAuthenticated',),
         initial='AllowAny',
         help_text=(
-        'REST Framework Permissions Policies are described at '
-        'http://www.django-rest-framework.org/api-guide/permissions/ '
+            'REST Framework Permissions Policies are described at '
+            'http://www.django-rest-framework.org/api-guide/permissions/ '
         )
     )
 

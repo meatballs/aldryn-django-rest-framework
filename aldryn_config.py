@@ -14,7 +14,7 @@ class Form(forms.BaseForm):
       'Django REST Framework Permissions Policy',
       required=False,
       initial='AllowAny',
-      choices=('AllowAny', 'IsAuthenticated')
+      choices=('AllowAny', 'IsAuthenticated'),
       help_text=(
         'REST Framework Permissions Policies are described at '
         'http://www.django-rest-framework.org/api-guide/permissions/ '

@@ -1,0 +1,6 @@
+{
+    "package-name": "aldryn-django-rest-framework",
+    "installed-apps": [
+        "aldryn_django_rest_framework"
+    ]
+}

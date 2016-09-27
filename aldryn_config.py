@@ -10,15 +10,6 @@ class Form(forms.BaseForm):
         initial=True,
     )
 
-    rest_framework_permissions = forms.SelectField(
-        'REST Framework Permissions Policy',
-        required=True,
-        choices=[
-          'AllowAny',
-          'DjangoModelPermissionsOrAnonReadOnly'
-        ],
-        initial='AllowAny'
-    )
 
     def to_settings(self, data, settings):
         enable_rest_framework = data['enable_rest_framework']
@@ -29,8 +20,4 @@ class Form(forms.BaseForm):
                 'rest_framework',
             ])
             settings['ADDON_URLS'].append('aldryn_django_rest_framework.urls')
-            permissions_policy = 'rest_framework.permissions.{}'.format(rest_framework_permissions)
-            settings['REST_FRAMEWORK'] = {
-                'DEFAULT_PERMISSION_CLASSES': (permissions_policy)
-            }
         return settings

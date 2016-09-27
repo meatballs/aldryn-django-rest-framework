@@ -12,7 +12,7 @@ class Form(forms.BaseForm):
 
     permissions_policy = forms.CharField(
       'Django REST Framework Permissions Policy',
-      required=True,
+      required=False,
       initial='AllowAny')
 
     def to_settings(self, data, settings):

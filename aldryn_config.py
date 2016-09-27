@@ -10,13 +10,23 @@ class Form(forms.BaseForm):
         initial=True,
     )
 
+    permissions_policy = forms.CharField(
+      'Django REST Framework Permissions Policy',
+      required=True,
+      initial='AllowAny')
 
     def to_settings(self, data, settings):
         enable_rest_framework = data['enable_rest_framework']
+        permissions_policy = (
+          'rest_framework.permissions.{}'.format(
+          data['permissions_policy']))
 
         if enable_rest_framework:
             settings['INSTALLED_APPS'].extend([
                 'rest_framework',
             ])
             settings['ADDON_URLS'].append('aldryn_django_rest_framework.urls')
+            settings['REST_FRAMEWORK'] = {
+                'DEFAULT_PERMISSION_CLASSES': (permissions_policy)
+            }
         return settings

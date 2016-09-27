@@ -13,7 +13,6 @@ class Form(forms.BaseForm):
 
     def to_settings(self, data, settings):
         enable_rest_framework = data['enable_rest_framework']
-        rest_framework_permissions = data['rest_framework_permissions']
 
         if enable_rest_framework:
             settings['INSTALLED_APPS'].extend([

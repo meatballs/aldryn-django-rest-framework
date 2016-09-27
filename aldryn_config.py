@@ -13,7 +13,12 @@ class Form(forms.BaseForm):
     permissions_policy = forms.CharField(
       'Django REST Framework Permissions Policy',
       required=False,
-      initial='AllowAny')
+      initial='AllowAny',
+      help_text=(
+        'Enter one of the permissions policies described at '
+        'http://www.django-rest-framework.org/api-guide/permissions/ '
+        )
+      )
 
     def to_settings(self, data, settings):
         enable_rest_framework = data['enable_rest_framework']

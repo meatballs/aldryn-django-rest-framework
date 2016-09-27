@@ -11,7 +11,7 @@ class Form(forms.BaseForm):
     )
 
     rest_framework_permissions = forms.SelectField(
-        label='REST Framework Permissions Policy',
+        'REST Framework Permissions Policy',
         required=True,
         choices=[
           'AllowAny',
